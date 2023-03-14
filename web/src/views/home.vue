@@ -44,7 +44,7 @@
               </span>
               <span>
                 <component v-bind:is="'LikeOutlined'" style="margin-right: 8px" />
-                {{ item.voteCount }}
+                {{ item.voteCount }} 
               </span>
             </template>
             <a-list-item-meta :description="item.description">
@@ -68,7 +68,6 @@ import axios from 'axios';
 import { message } from 'ant-design-vue';
 import {Tool} from "@/util/tool";
 import TheWelcome from '@/components/the-welcome.vue';
-
 // const listData: any = [];
 // for (let i = 0; i < 23; i++) {
 //   listData.push({
@@ -81,7 +80,6 @@ import TheWelcome from '@/components/the-welcome.vue';
 //         'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
 //   });
 // }
-
 export default defineComponent({
   name: 'Home',
   components: {
@@ -90,9 +88,7 @@ export default defineComponent({
   setup() {
     const ebooks = ref();
     // const ebooks1 = reactive({books: []});
-
     const openKeys =  ref();
-
     const level1 =  ref();
     let categorys: any;
     /**
@@ -104,13 +100,11 @@ export default defineComponent({
         if (data.success) {
           categorys = data.content;
           console.log("原始数组：", categorys);
-
           // 加载完分类后，将侧边栏全部展开
           openKeys.value = [];
           for (let i = 0; i < categorys.length; i++) {
             openKeys.value.push(categorys[i].id)
           }
-
           level1.value = [];
           level1.value = Tool.array2Tree(categorys, 0);
           console.log("树形结构：", level1.value);
@@ -119,16 +113,14 @@ export default defineComponent({
         }
       });
     };
-
     const isShowWelcome = ref(true);
     let categoryId2 = 0;
-
     const handleQueryEbook = () => {
       axios.get("/ebook/list", {
         params: {
           page: 1,
           size: 1000,
-          categoryId2: categoryId2
+          // categoryId2: categoryId2
         }
       }).then((response) => {
         const data = response.data;
@@ -136,7 +128,6 @@ export default defineComponent({
         // ebooks1.books = data.content;
       });
     };
-
     const handleClick = (value: any) => {
       // console.log("menu click", value)
       if (value.key === 'welcome') {
@@ -148,12 +139,10 @@ export default defineComponent({
       }
       // isShowWelcome.value = value.key === 'welcome';
     };
-
     onMounted(() => {
       handleQueryCategory();
-      // handleQueryEbook();
+       handleQueryEbook();
     });
-
     return {
       ebooks,
       // ebooks2: toRef(ebooks1, "books"),
@@ -169,12 +158,9 @@ export default defineComponent({
       //   { type: 'LikeOutlined', text: '156' },
       //   { type: 'MessageOutlined', text: '2' },
       // ],
-
       handleClick,
       level1,
-
       isShowWelcome,
-
       openKeys
     }
   }

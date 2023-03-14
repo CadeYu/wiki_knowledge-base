@@ -89,10 +89,13 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, onMounted, ref } from 'vue';
+  import { defineComponent, onMounted, ref} from 'vue';
+  import BigInt from 'big-integer';
+
   import axios from 'axios';
   import { message } from 'ant-design-vue';
   import {Tool} from "@/util/tool";
+import { string } from 'vue-types';
 
   export default defineComponent({
     name: 'AdminEbook',
@@ -226,7 +229,8 @@
       };
 
       const handleDelete = (id: number) => {
-        axios.delete("/ebook/delete/" + id).then((response) => {
+  
+          axios.delete("/ebook/delete/"+id).then((response) => {
           const data = response.data; // data = commonResp
           if (data.success) {
             // 重新加载列表

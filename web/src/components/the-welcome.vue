@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <div class="tip">
@@ -6,6 +7,11 @@
       <div>2. 有文档被点赞会收到实时通知哦！</div>
       <div>3. 左侧菜单是动态加载的，登录后在分类管理可配置</div>
       <div>4. 文档树可无限级扩展，支持文字、图片、<b>视频</b></div>
+      <!-- <div>你也想有个WIKI知识库吗？，<b>配套视频课程</b>：
+        <a href="https://coding.imooc.com/class/474.html" target="_blank">
+        《SpringBoot知识体系+Vue3全家桶 前后端分离 实战WIKI知识库系统》
+        </a>
+      </div> -->
     </div>
 
     <a-row>
@@ -120,10 +126,10 @@
           const data = response.data;
           if (data.success) {
             const statisticResp = data.content;
-            statistic.value.viewCount = statisticResp[1].viewCount;
-            statistic.value.voteCount = statisticResp[1].voteCount;
-            statistic.value.todayViewCount = statisticResp[1].viewIncrease;
-            statistic.value.todayVoteCount = statisticResp[1].voteIncrease;
+            statistic.value.viewCount = statisticResp[0].viewCount;
+            statistic.value.voteCount = statisticResp[0].voteCount;
+            statistic.value.todayViewCount = statisticResp[0].viewIncrease;
+            statistic.value.todayVoteCount = statisticResp[0].voteIncrease;
 
             // 按分钟计算当前时间点，占一天的百分比
             const now = new Date();

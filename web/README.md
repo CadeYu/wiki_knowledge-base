@@ -1,24 +1,17 @@
-# web
+## 启动前端   `npm run serve`
 
-## Project setup
-```
-npm install
-```
+![前端启动](img/iShot_2023-01-29_18.39.09.png)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 启动后端
+![后端启动](img/iShot_2023-01-29_19.52.07.png)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 功能页面
 
-### Lints and fixes files
-```
-npm run lint
-```
+![](img/iShot_2023-01-29_19.50.08.png)
+![](img/iShot_2023-01-29_19.50.29.png)
+![](img/iShot_2023-01-29_19.50.38.png)
+![](img/iShot_2023-01-29_19.50.48.png)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
