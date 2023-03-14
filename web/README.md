@@ -1,16 +1,16 @@
 ## 启动前端   `npm run serve`
 
-![前端启动](img/iShot_2023-01-29_18.39.09.png)
+![前端启动](fuction_show/WX20230314-214003%402x.png)
 
 ## 启动后端
-![后端启动](img/iShot_2023-01-29_19.52.07.png)
+![后端启动](fuction_show/WX20230314-214225%402x.png)
 
 ## 功能页面
 
-![](img/iShot_2023-01-29_19.50.08.png)
-![](img/iShot_2023-01-29_19.50.29.png)
-![](img/iShot_2023-01-29_19.50.38.png)
-![](img/iShot_2023-01-29_19.50.48.png)
+![](fuction_show/WX20230314-214338@2x.png)
+![](fuction_show/WX20230314-214356@2x.png)
+![](fuction_show/WX20230314-214441@2x.png)
+![](fuction_show/WX20230314-214421@2x.png)
 
 
 
